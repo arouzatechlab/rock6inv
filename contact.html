@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./nav.css" />
+
+    <!-- SEO Optimization -->
+    <title>
+      Investment Research Company Contact | ROCK6 Research and Development Group
+    </title>
+    <meta
+      name="description"
+      content="Contact ROCK6 Research and Development Group for investment consulting, financial research, portfolio management and business advisory services."
+    />
+    <meta
+      name="keywords"
+      content="investment, financial research, stock market advisory, portfolio management, wealth management, capital growth, ROCK6, financial consulting"
+    />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      :root {
+        --primary-blue: #0056b3;
+        --primary-dark: #004494;
+        --accent-red: #dc3545;
+        --success-green: #28a745;
+        --bg-light: #f4f7f9;
+        --white: #ffffff;
+        --text-main: #333333;
+        --text-muted: #666666;
+        --border-color: #dddddd;
+        --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --radius: 8px;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        position: relative;
+        background-image: url("./assets/herooo.webp");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 80px 20px 120px 20px;
+        text-align: center;
+        margin-bottom: -60px; /* Overlap effect */
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(
+          135deg,
+          rgba(0, 40, 80, 0.95) 0%,
+          rgba(0, 20, 40, 0.85) 100%
+        ); */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+        font-weight: 800;
+        margin-bottom: 15px;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        color: var(--success-green);
+      }
+
+      .hero p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        opacity: 0.9;
+        font-weight: 300;
+        color: var(--bg-light);
+      }
+
+      /* --- CONTACT CARD --- */
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .contact-card {
+        background: var(--white);
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        padding: 30px 20px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .section-title {
+        color: var(--primary-blue);
+        margin-bottom: 30px;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* --- FORM STYLES --- */
+      form {
+        display: grid;
+        grid-template-columns: 1fr; /* Mobile-first: single column */
+        gap: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: 700;
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      label::after {
+        content: " *";
+        color: var(--accent-red);
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 14px 16px;
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        font-size: 1rem;
+        font-family: inherit;
+        background-color: #fafafa;
+        transition: var(--transition);
+        width: 100%;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+        background-color: var(--white);
+        box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
+      }
+
+      /* Custom Radio Buttons */
+      .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 5px 0;
+      }
+
+      .radio-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      .radio-item input {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .radio-item label {
+        margin-bottom: 0;
+        font-weight: 500;
+        cursor: pointer;
+        text-transform: none;
+        color: var(--text-main);
+        font-size: 0.95rem;
+      }
+
+      .radio-item label::after {
+        content: "";
+      }
+
+      /* File Upload */
+      .file-upload-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 0;
+      }
+
+      #photo-preview {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+        border-radius: 50%;
+        border: 2px solid var(--primary-blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: var(--bg-light);
+      }
+
+      #photo-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .full-width {
+        grid-column: 1 / -1;
+      }
+
+      /* Button */
+      .submit-btn {
+        background-color: var(--primary-blue);
+        color: var(--white);
+        border: none;
+        padding: 18px;
+        font-size: 1rem;
+        font-weight: 800;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: var(--transition);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+        margin-top: 10px;
+      }
+
+      .submit-btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 86, 179, 0.4);
+      }
+
+      /* Success State */
+      .success-banner {
+        display: none;
+        background-color: var(--success-green);
+        color: white;
+        padding: 40px 20px;
+        border-radius: var(--radius);
+        text-align: center;
+        margin-bottom: 20px;
+        animation: slideUp 0.5s ease;
+      }
+
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .error-msg {
+        color: var(--accent-red);
+        font-size: 0.7rem;
+        margin-top: 5px;
+        display: none;
+        font-weight: 600;
+      }
+
+      /* --- RESPONSIVE QUERIES --- */
+      @media (min-width: 768px) {
+        .hero {
+          padding: 120px 20px 180px 20px;
+          background-attachment: fixed; /* Parallax only for desktop */
+        }
+
+        .contact-card {
+          padding: 60px;
+          margin-top: -100px;
+        }
+
+        form {
+          grid-template-columns: 1fr 1fr; /* Two columns for tablet/desktop */
+          column-gap: 40px;
+          row-gap: 30px;
+        }
+
+        .section-title {
+          font-size: 2rem;
+          margin-bottom: 50px;
+        }
+
+        .submit-btn {
+          width: max-content;
+          padding-left: 60px;
+          padding-right: 60px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <img
+            src="./assets/rocklogo.webp"
+            alt="ROCK6 Research and Development Group Logo"
+            class="nav-logo"
+          />
+        </div>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="./industry.html" class="nav-link">INDUSTRIES</a>
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link btn-contact">CONTACT</a>
+          </li>
+        </ul>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container" style="color: var(--success-green)">
+          <h1>ROCK6 RESEARCH AND DEVELOPMENT GROUP</h1>
+          <!-- <p style="color: var(--bg-light)">
+            Strategic Investment Solutions & Financial Growth Advisory for
+            Global Markets
+          </p> -->
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="contact-card">
+          <div id="success-message" class="success-banner" role="alert">
+            <h3 style="margin-bottom: 10px">Submission Successful</h3>
+            <p>
+              Thank you for reaching out. A senior research consultant will
+              review your details and contact you within 24 business hours.
+            </p>
+          </div>
+
+          <h2 class="section-title" id="form-heading">Consultation Request</h2>
+
+          <form id="contactForm" novalidate>
+            <!-- Name -->
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
+              <span class="error-msg" id="name-error"
+                >Full name is required</span
+              >
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+              <label for="phno">Phone Number</label>
+              <input
+                type="tel"
+                id="phno"
+                name="phno"
+                placeholder="10-digit mobile number"
+                pattern="[0-9]{10}"
+                required
+              />
+              <span class="error-msg" id="phno-error"
+                >Valid 10-digit number required</span
+              >
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@company.com"
+                required
+              />
+              <span class="error-msg" id="email-error"
+                >Valid email address required</span
+              >
+            </div>
+
+            <!-- Blood Group -->
+            <div class="form-group">
+              <label for="blood_group">Blood Group</label>
+              <select id="blood_group" name="blood_group" required>
+                <option value="">Select Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+
+            <!-- Occupation -->
+            <div class="form-group">
+              <label for="occupation">Current Occupation</label>
+              <input
+                type="text"
+                id="occupation"
+                name="occupation"
+                placeholder="Professional Role"
+                required
+              />
+            </div>
+
+            <!-- Qualification -->
+            <div class="form-group">
+              <label for="qualification">Highest Qualification</label>
+              <select id="qualification" name="qualification" required>
+                <option value="">Select Level</option>
+                <option value="Bachelor's Degree">Bachelor's Degree</option>
+                <option value="Master's Degree">Master's Degree</option>
+                <option value="PhD / Doctorate">SSLC/OTHER</option>
+                <option value="Professional Certification">PUC/DIPLOMA</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="qualification">INDUSTRY TYPE</label>
+              <select id="qualification" name="qualification" required>
+                <option value="">Select Level</option>
+                <option value="Bachelor's Degree">BUSINESS</option>
+                <option value="Master's Degree">
+                  RESEARCH AND DEVELOPMENT
+                </option>
+              </select>
+            </div>
+            <!-- Business Field -->
+            <div class="form-group">
+              <label for="business_field">Business Field</label>
+              <input
+                type="text"
+                id="business_field"
+                name="business_field"
+                placeholder="Industry sector"
+                required
+              />
+            </div>
+
+            <!-- Parents Name -->
+            <div class="form-group">
+              <label for="parent_name">Parent's Name</label>
+              <input
+                type="text"
+                id="parent_name"
+                name="parent_name"
+                placeholder="Full name"
+                required
+              />
+            </div>
+
+            <!-- Parents Occupation -->
+            <div class="form-group">
+              <label for="parent_occ">Parent's Occupation</label>
+              <input
+                type="text"
+                id="parent_occ"
+                name="parent_occ"
+                placeholder="Current or former role"
+                required
+              />
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio-group">
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="Male"
+                    required
+                  />
+                  <label for="male">Male</label>
+                </div>
+                <div class="radio-item">
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="Female"
+                  />
+                  <label for="female">Female</label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" id="other" name="gender" value="Other" />
+                  <label for="other">Other</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group full-width">
+              <label for="address">Residential Address</label>
+              <textarea
+                id="address"
+                name="address"
+                rows="3"
+                placeholder="Full mailing address for official correspondence"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Photo Upload -->
+            <div class="form-group full-width">
+              <label for="photo">Identity Verification Photo</label>
+              <div class="file-input-wrapper">
+                <input
+                  type="file"
+                  id="photo"
+                  name="photo"
+                  accept="image/*"
+                  required
+                />
+                <div id="photo-preview">
+                  <span
+                    style="
+                      color: #aaa;
+                      font-size: 0.7rem;
+                      text-align: center;
+                      padding: 5px;
+                    "
+                    >No Image</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group full-width">
+              <label for="message"
+                >Investment Goals & Research Requirements</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Please describe your specific areas of interest (e.g., Equity, Fixed Income, R&D projects)..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group full-width">
+              <button type="submit" class="submit-btn" id="submitBtn">
+                Submit Request
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <!-- 1. Company Section -->
+        <div class="company-section">
+          <img
+            src="./assets/rocklogo.webp"
+            alt="ROCK6 Research and Development Group Logo"
+            class="footer-logo"
+          />
+          <p class="company-desc">
+            Strategic investment research and financial advisory services
+            focused on capital growth, portfolio management and sustainable
+            wealth creation.
+          </p>
+        </div>
+
+        <!-- 2. Quick Links Section -->
+        <div class="links-section">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="links-list">
+            <li><a href="./about.html">Home</a></li>
+            <li><a href="./industry.html">Industries</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Social Media Section -->
+        <div class="social-section">
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <!-- Twitter (X) -->
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                ></path>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Newsletter Subscription Section -->
+        <div class="newsletter-section">
+          <h3 class="footer-heading">Subscribe to Our Newsletter</h3>
+          <p>
+            Get the latest financial insights delivered to your inbox weekly.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+              required
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div id="success-message">
+            ✓ Subscription successful! Welcome to ROCK6.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> ROCK6 Research and Development Group. All
+        Rights Reserved.Design and Maintained BY
+        <a
+          href="./https://arouzatechlabs.in/"
+          style="text-decoration: none; color: red"
+          >AROUZA TECHLABS</a
+        >
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("contactForm");
+        const photoInput = document.getElementById("photo");
+        const photoPreview = document.getElementById("photo-preview");
+        const successBanner = document.getElementById("success-message");
+        const formHeading = document.getElementById("form-heading");
+
+        // 1. Image Preview Logic
+        photoInput.addEventListener("change", function () {
+          const file = this.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              photoPreview.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+            };
+            reader.readAsDataURL(file);
+          } else {
+            photoPreview.innerHTML = `<span style="color: #aaa; font-size: 0.7rem;">No Image</span>`;
+          }
+        });
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const navbar = document.querySelector(".navbar");
+
+        const toggleMenu = () => {
+          hamburger.classList.toggle("active");
+          navMenu.classList.toggle("active");
+
+          // Toggle scroll lock on body
+          if (navMenu.classList.contains("active")) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "auto";
+          }
+        };
+
+        hamburger.addEventListener("click", toggleMenu);
+
+        // Close menu when clicking a link
+        navLinks.forEach((n) =>
+          n.addEventListener("click", () => {
+            if (navMenu.classList.contains("active")) {
+              toggleMenu();
+            }
+          }),
+        );
+
+        // Dynamic shadow on scroll
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+
+        // 2. Form Validation & Submission
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let isValid = true;
+          const formData = new FormData(form);
+
+          // Clear previous errors
+          document
+            .querySelectorAll(".error-msg")
+            .forEach((msg) => (msg.style.display = "none"));
+          document
+            .querySelectorAll("input, select, textarea")
+            .forEach((el) => (el.style.borderColor = ""));
+
+          // Name Validation
+          if (!formData.get("name").trim()) {
+            showError("name", "Full name is required");
+            isValid = false;
+          }
+
+          // Phone Validation (10 digits)
+          const phno = formData.get("phno");
+          const phoneRegex = /^[0-9]{10}$/;
+          if (!phoneRegex.test(phno)) {
+            showError("phno", "Enter 10 numeric digits");
+            isValid = false;
+          }
+
+          // Email Validation
+          const email = formData.get("email");
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            showError("email", "Invalid email format");
+            isValid = false;
+          }
+
+          // Generic Check for other required fields
+          const fields = [
+            "blood_group",
+            "occupation",
+            "parent_name",
+            "address",
+            "message",
+            "qualification",
+            "business_field",
+          ];
+          fields.forEach((field) => {
+            if (!formData.get(field)) {
+              const el = document.getElementById(field);
+              if (el) el.style.borderColor = "var(--accent-red)";
+              isValid = false;
+            }
+          });
+
+          if (isValid) {
+            const btn = document.getElementById("submitBtn");
+            btn.disabled = true;
+            btn.innerText = "Transmitting Data...";
+
+            // Simulate server submission
+            setTimeout(() => {
+              form.style.display = "none";
+              formHeading.style.display = "none";
+              successBanner.style.display = "block";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 1800);
+          }
+        });
+
+        function showError(id, message) {
+          const input = document.getElementById(id);
+          const error = document.getElementById(`${id}-error`);
+          if (input && error) {
+            input.style.borderColor = "var(--accent-red)";
+            error.innerText = message;
+            error.style.display = "block";
+          }
+        }
+      });
+    </script>
+    <script src="./footer.js"></script>
+  </body>
+</html>

@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROCK6 Footer Section</title>
+    <!-- Google Fonts for Corporate Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-blue: #0056b3;
+        --primary-blue-dark: #004494;
+        --accent-red: #dc3545;
+        --success-green: #28a745;
+        --bg-light: #f4f7f9;
+        --white: #ffffff;
+        --text-main: #333333;
+        --text-muted: #e0e0e0; /* Adjusted for dark background readability */
+        --border-color: #dddddd;
+        --footer-bg: #002d5d; /* Darker variant of primary blue for professional depth */
+        --footer-text: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg-light);
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: var(--footer-bg);
+        color: var(--footer-text);
+        padding: 40px 20px;
+        border-top: 4px solid var(--primary-blue);
+        position: relative;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr; /* Mobile First: 1 column */
+        gap: 40px;
+      }
+
+      /* 1. Company Section */
+      .company-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-logo {
+        height: 90px;
+        width: auto;
+        max-width: 200px;
+        object-fit: contain;
+        /* Ensure placeholder is visible on dark bg */
+      }
+
+      .company-desc {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        max-width: 400px;
+      }
+
+      /* 2. Quick Links Section */
+      .footer-heading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        position: relative;
+      }
+
+      .footer-heading::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-blue);
+      }
+
+      .links-list {
+        list-style: none;
+      }
+
+      .links-list li {
+        margin-bottom: 12px;
+      }
+
+      .links-list a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: inline-block;
+        position: relative;
+      }
+
+      .links-list a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--white);
+        transition: width 0.3s ease;
+      }
+
+      .links-list a:hover {
+        color: var(--white);
+      }
+
+      .links-list a:hover::after {
+        width: 100%;
+      }
+
+      /* 3. Social Media Section */
+      .social-icons {
+        display: flex;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .social-btn {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .social-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: currentColor;
+      }
+
+      .social-btn:hover {
+        background-color: var(--accent-red);
+        transform: translateY(-3px);
+      }
+
+      /* 4. Newsletter Section */
+      .newsletter-section p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter-form input {
+        padding: 12px 16px;
+        border-radius: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--white);
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .newsletter-form input:focus {
+        border-color: var(--primary-blue);
+      }
+
+      .newsletter-form button {
+        padding: 12px 24px;
+        border-radius: 6px;
+        border: none;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .newsletter-form button:hover {
+        background-color: var(--primary-blue-dark);
+      }
+
+      #success-message {
+        margin-top: 10px;
+        color: var(--success-green);
+        font-size: 0.85rem;
+        display: none;
+        animation: fadeIn 0.5s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* 5. Copyright Line */
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* Tablet Layout */
+      @media (min-width: 768px) {
+        .footer-container {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 60px 20px;
+        }
+      }
+
+      /* Desktop Layout */
+      @media (min-width: 1024px) {
+        footer {
+          padding: 80px 40px;
+        }
+        .footer-container {
+          grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        }
+        .newsletter-form {
+          flex-direction: row;
+        }
+        .newsletter-form input {
+          flex: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Example Section to show spacing -->
+    <div
+      style="
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <h1 style="color: var(--text-main)">Financial Website Content</h1>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <!-- 1. Company Section -->
+        <div class="company-section">
+          <img
+            src="./assets/rocklogo.webp"
+            alt="ROCK6 Research and Development Group Logo"
+            class="footer-logo"
+          />
+          <p class="company-desc">
+            Strategic investment research and financial advisory services
+            focused on capital growth, portfolio management and sustainable
+            wealth creation.
+          </p>
+        </div>
+
+        <!-- 2. Quick Links Section -->
+        <div class="links-section">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="links-list">
+            <li><a href="./about.html">Home</a></li>
+            <li><a href="./industry.html">Industries</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Social Media Section -->
+        <div class="social-section">
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <!-- Twitter (X) -->
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                ></path>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Newsletter Subscription Section -->
+        <div class="newsletter-section">
+          <h3 class="footer-heading">Subscribe to Our Newsletter</h3>
+          <p>
+            Get the latest financial insights delivered to your inbox weekly.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+              required
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div id="success-message">
+            ✓ Subscription successful! Welcome to ROCK6.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> ROCK6 Research and Development Group. All
+        Rights Reserved.Design and Maintained BY
+        <a
+          href="./https://arouzatechlabs.in/"
+          style="text-decoration: none; color: red"
+          >AROUZA TECHLABS</a
+        >
+      </div>
+    </footer>
+
+    <script>
+      // Set current year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Newsletter Handling
+      const form = document.getElementById("newsletterForm");
+      const emailInput = document.getElementById("emailInput");
+      const successMsg = document.getElementById("success-message");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+
+        // Basic Email Validation
+        if (validateEmail(email)) {
+          // Simulate an API call
+          const btn = form.querySelector("button");
+          const originalText = btn.textContent;
+
+          btn.disabled = true;
+          btn.textContent = "Processing...";
+
+          setTimeout(() => {
+            // Show Success Message
+            form.style.display = "none";
+            successMsg.style.display = "block";
+
+            // Reset form (if you want it to reappear after some time)
+            /* setTimeout(() => {
+            form.reset();
+            form.style.display = 'flex';
+            successMsg.style.display = 'none';
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }, 5000); 
+          */
+          }, 1200);
+        }
+      });
+
+      function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+      }
+    </script>
+  </body>
+</html>

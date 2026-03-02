@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Optimization -->
+    <title>Industries We Serve | ROCK6 Research and Development Group</title>
+    <meta
+      name="description"
+      content="Explore the industries served by ROCK6 Research and Development Group including agriculture, automobiles, food processing, textile, real estate, finance, manufacturing and other local business sectors."
+    />
+    <meta
+      name="keywords"
+      content="investment advisory for industries, agriculture finance consulting, SME financial advisory, local industry investment support, portfolio strategy for businesses, capital growth consulting"
+    />
+    <link rel="stylesheet" href="./nav.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./footer.css" />
+    <style>
+      :root {
+        --primary-blue: #0056b3;
+        --primary-dark: #003d80;
+        --accent-red: #dc3545;
+        --success-green: #28a745;
+        --bg-light: #f4f7f9;
+        --white: #ffffff;
+        --text-main: #333333;
+        --text-muted: #0f0f0f;
+        --border-color: #dddddd;
+        --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.15);
+        --radius: 8px;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      /* Hero Section with Image Background */
+      .hero {
+        position: relative;
+        background-image: url("./assets/herooo.webp");
+        background-size: cover;
+        background-position: center;
+        color: var(--white);
+        padding: 100px 20px;
+        text-align: center;
+        min-height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Hero Overlay for Readability */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background: linear-gradient(
+          135deg,
+          rgba(0, 40, 80, 0.9) 0%,
+          rgba(0, 86, 179, 0.7) 100%
+        ); */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.25rem, 10vw, 4rem);
+        font-weight: 800;
+        margin-bottom: 20px;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        color: var(--success-green);
+      }
+
+      .hero p {
+        font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+        opacity: 0.95;
+        margin: 0 auto;
+        font-weight: 400;
+        max-width: 700px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        color: var(--bg-light);
+      }
+
+      /* Container */
+      .container {
+        width: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        /* Improved mobile padding to prevent edge touching */
+        padding: 40px 20px;
+      }
+
+      /* Grid Layout - Mobile First */
+      .industries-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      /* Industry Card */
+      .industry-card {
+        background: var(--white);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-soft);
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition);
+        border: 1px solid var(--border-color);
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      .industry-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .industry-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--primary-blue);
+      }
+
+      /* Card Image Wrapper */
+      .img-wrapper {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background-color: #f0f0f0;
+        position: relative;
+      }
+
+      .industry-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .industry-card:hover .industry-img {
+        transform: scale(1.08);
+      }
+
+      /* Card Content */
+      .card-body {
+        padding: 28px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .industry-card h2 {
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+      }
+
+      .industry-card .description {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+        line-height: 1.5;
+      }
+
+      .sub-business-header {
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--text-main);
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sub-business-list {
+        list-style: none;
+        margin-bottom: 30px;
+        flex-grow: 1;
+      }
+
+      .sub-business-list li {
+        font-size: 0.95rem;
+        padding: 6px 0;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .sub-business-list li:last-child {
+        border-bottom: none;
+      }
+
+      .sub-business-list li::before {
+        content: "→";
+        color: var(--primary-blue);
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 0.8rem;
+      }
+
+      /* Action Button */
+      .btn-advisory {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        background-color: var(--primary-blue);
+        color: var(--white);
+        text-align: center;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: var(--radius);
+        transition: var(--transition);
+        font-size: 1rem;
+        margin-top: auto;
+        border: 2px solid transparent;
+      }
+
+      .btn-advisory:hover {
+        background-color: var(--primary-dark);
+        box-shadow: 0 6px 15px rgba(0, 86, 179, 0.25);
+      }
+
+      .btn-advisory:active {
+        transform: scale(0.98);
+      }
+
+      /* Responsive Breakpoints */
+      @media (min-width: 768px) {
+        .industries-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 32px;
+        }
+        .container {
+          padding: 80px 40px;
+        }
+        .hero {
+          padding: 120px 20px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .industries-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (min-width: 1440px) {
+        .industries-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* Mobile specific fixes for small screens */
+      @media (max-width: 380px) {
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+        .card-body {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo-container">
+          <img
+            src="./assets/rocklogo.webp"
+            alt="ROCK6 Research and Development Group Logo"
+            class="nav-logo"
+          />
+        </div>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="./industry.html" class="nav-link">INDUSTRIES</a>
+          </li>
+          <li class="nav-item">
+            <a href="./about.html" class="nav-link">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a href="./contact.html" class="nav-link btn-contact">CONTACT</a>
+          </li>
+        </ul>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="reveal">Industries We Serve</h1>
+        <!-- <p class="reveal">
+          Strategic Investment & Financial Advisory Across Diverse Business
+          Sectors to Foster Resilience and Global Growth.
+        </p> -->
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <section class="industries-grid" id="industriesGrid">
+        <!-- Card items remain identical in structure, updated description and styles -->
+
+        <!-- 1. AGRICULTURE -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Agriculture and farming industry"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Agriculture</h2>
+            <p class="description">
+              Optimizing output and sustainability for the foundational sector
+              of the economy.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Farming (Farmers)</li>
+              <li>Pesticide & Fertilizer Business</li>
+              <li>Agricultural Equipment (Tractors, Pumps)</li>
+              <li>Organic Farming</li>
+              <li>Dairy Farming</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 2. AUTOMOBILES -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Automobile industry and showrooms"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Automobiles</h2>
+            <p class="description">
+              Strategic growth for sales, service, and the evolving EV
+              distribution market.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Car Dealership</li>
+              <li>Bike Showrooms</li>
+              <li>Spare Parts Business</li>
+              <li>Auto Repair Workshops</li>
+              <li>Electric Vehicle Distribution</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 3. FOODS & FOOD PROCESSING -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Food processing and restaurants"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Foods & Processing</h2>
+            <p class="description">
+              From industrial processing units to global food export strategies.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Restaurants</li>
+              <li>Packaged Foods</li>
+              <li>Dairy Products</li>
+              <li>Bakery Units</li>
+              <li>Food Export Business</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 4. TEXTILE -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Textile and garment manufacturing"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Textile</h2>
+            <p class="description">
+              Enhancing production efficiency and market readiness for the
+              garment sector.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Garment Manufacturing</li>
+              <li>Handloom Business</li>
+              <li>Textile Trading</li>
+              <li>Boutique Stores</li>
+              <li>Export Units</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 5. REAL ESTATE -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Real estate and construction"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Real Estate</h2>
+            <p class="description">
+              Navigating development, land acquisition, and commercial
+              investment portfolio.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Residential Projects</li>
+              <li>Commercial Properties</li>
+              <li>Construction Firms</li>
+              <li>Property Consulting</li>
+              <li>Land Development</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 6. FINANCE -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Financial services and wealth management"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Finance</h2>
+            <p class="description">
+              Strengthening the pillars of wealth management and credit
+              accessibility models.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Microfinance</li>
+              <li>Insurance Agencies</li>
+              <li>Loan Advisory</li>
+              <li>Investment Firms</li>
+              <li>Wealth Management Services</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 7. MANUFACTURING -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Manufacturing and industrial units"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Manufacturing</h2>
+            <p class="description">
+              Operational scaling and capital planning for small and mid-scale
+              industrial units.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Small Scale Factories</li>
+              <li>Machinery Production</li>
+              <li>Packaging Units</li>
+              <li>Industrial Equipment</li>
+              <li>Local Production Units</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 8. EDUCATION -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Education and EdTech"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Education</h2>
+            <p class="description">
+              Investing in the future through institutional growth and EdTech
+              integration.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Schools</li>
+              <li>Coaching Centers</li>
+              <li>EdTech Startups</li>
+              <li>Skill Development Institutes</li>
+              <li>Training Centers</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 9. HEALTHCARE -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Healthcare and medical facilities"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Healthcare</h2>
+            <p class="description">
+              Capital advisory for diagnostic facilities and medical supply
+              chain networks.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Clinics</li>
+              <li>Diagnostic Centers</li>
+              <li>Medical Stores</li>
+              <li>Small Hospitals</li>
+              <li>Medical Equipment Supply</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 10. LOGISTICS & TRANSPORT -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Logistics and supply chain"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Logistics & Transport</h2>
+            <p class="description">
+              Optimizing fleet movement and supply chain management for local
+              commerce.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Truck Transport</li>
+              <li>Warehousing</li>
+              <li>Courier Services</li>
+              <li>Cargo Handling</li>
+              <li>Supply Chain Management</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+
+        <!-- 11. RETAIL & LOCAL BUSINESS -->
+        <article class="industry-card">
+          <div class="img-wrapper">
+            <img
+              src=""
+              alt="Retail and supermarkets"
+              class="industry-img"
+              loading="lazy"
+            />
+          </div>
+          <div class="card-body">
+            <h2>Retail & Local Business</h2>
+            <p class="description">
+              Scaling local stores into franchise networks through structured
+              financial planning.
+            </p>
+            <p class="sub-business-header">Sectors We Advise:</p>
+            <ul class="sub-business-list">
+              <li>Supermarkets</li>
+              <li>Kirana Stores</li>
+              <li>Electronics Shops</li>
+              <li>Franchise Outlets</li>
+              <li>Wholesale Business</li>
+            </ul>
+            <a href="contact.html" class="btn-advisory"
+              >Contact for Investment Advisory</a
+            >
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <!-- 1. Company Section -->
+        <div class="company-section">
+          <img
+            src="./assets/rocklogo.webp"
+            alt="ROCK6 Research and Development Group Logo"
+            class="footer-logo"
+          />
+          <p class="company-desc">
+            Strategic investment research and financial advisory services
+            focused on capital growth, portfolio management and sustainable
+            wealth creation.
+          </p>
+        </div>
+
+        <!-- 2. Quick Links Section -->
+        <div class="links-section">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="links-list">
+            <li><a href="./about.html">Home</a></li>
+            <li><a href="./industry.html">Industries</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- 3. Social Media Section -->
+        <div class="social-section">
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <!-- Twitter (X) -->
+            <a href="#" class="social-btn" aria-label="Twitter">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
+                ></path>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Newsletter Subscription Section -->
+        <div class="newsletter-section">
+          <h3 class="footer-heading">Subscribe to Our Newsletter</h3>
+          <p>
+            Get the latest financial insights delivered to your inbox weekly.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input
+              type="email"
+              id="emailInput"
+              placeholder="Enter your email"
+              required
+              aria-label="Email address"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div id="success-message">
+            ✓ Subscription successful! Welcome to ROCK6.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> ROCK6 Research and Development Group. All
+        Rights Reserved.Design and Maintained BY
+        <a
+          href="./https://arouzatechlabs.in/"
+          style="text-decoration: none; color: red"
+          >AROUZA TECHLABS</a
+        >
+      </div>
+    </footer>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const navbar = document.querySelector(".navbar");
+
+      const toggleMenu = () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+
+        // Toggle scroll lock on body
+        if (navMenu.classList.contains("active")) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "auto";
+        }
+      };
+
+      hamburger.addEventListener("click", toggleMenu);
+
+      // Close menu when clicking a link
+      navLinks.forEach((n) =>
+        n.addEventListener("click", () => {
+          if (navMenu.classList.contains("active")) {
+            toggleMenu();
+          }
+        }),
+      );
+
+      // Dynamic shadow on scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".industry-card, .reveal");
+
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              setTimeout(
+                () => {
+                  entry.target.classList.add("visible");
+                },
+                (index % 4) * 100,
+              );
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        cards.forEach((card) => {
+          observer.observe(card);
+        });
+      });
+
+      // Background image placeholders
+      document.addEventListener("DOMContentLoaded", function () {
+        const industryImages = document.querySelectorAll(".industry-img");
+
+        const placeholders = [
+          "./assets/in1.webp",
+          "./assets/in2.webp",
+          "./assets/in3.webp",
+          "./assets/in4.webp",
+          "./assets/in5.webp",
+          "./assets/in6.webp",
+          "./assets/in7.webp",
+          "./assets/in8.webp",
+          "./assets/in9.webp",
+          "./assets/in10.webp",
+          "./assets/in11.webp",
+        ];
+
+        industryImages.forEach((img, i) => {
+          if (placeholders[i]) {
+            img.src = placeholders[i];
+          }
+        });
+      });
+    </script>
+    <script src="./footer.js"></script>
+  </body>
+</html>
